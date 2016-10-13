@@ -49,6 +49,59 @@ html {
   left: 50px;
   top: -55px;
 }
+#person #head {
+  border: 2px solid black;
+  height: 40px;
+  width: 40px;
+  border-radius: 150px;
+  position: relative;
+  left: 136px;
+  top: -243px;
+}
+#person #body {
+  border: 2px solid black;
+  height: 70px;
+  width: 0px;
+  position: relative;
+  top: -245px;
+  left: 155px;
+}
+#person #leftArm {
+  border: 2px solid black;
+  height: 40px;
+  width: 0px;
+  position: relative;
+  left: 135px;
+  top: -325px;
+  transform: rotate(120deg);
+}
+#person #rightArm {
+  border: 2px solid black;
+  height: 40px;
+  width: 0px;
+  position: relative;
+  left: 173px;
+  top: -368px;
+  transform: rotate(60deg);
+}
+#person #rightLeg {
+  border: 2px solid black;
+  height: 40px;
+  width: 0px;
+  position: relative;
+  left: 171px;
+  top: -388px;
+  transform: rotate(130deg);
+}
+#person #leftLeg {
+  border: 2px solid black;
+  height: 40px;
+  width: 0px;
+  position: relative;
+  left: 138px;
+  top: -344px;
+  transform: rotate(50deg);
+}
 #targetWord {
   border: 1px solid red;
   height: 90%;
@@ -70,4 +123,7 @@ html {
   border: 1px solid red;
   height: 90px;
   width: 87.55px;
+  background-color: #306c7a;
+  color: white;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
