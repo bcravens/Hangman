@@ -9,12 +9,10 @@ body {
   display:flex;
   height: 425px;
   max-width: 70%;
-  border: 1px solid red;
   margin: 3em auto;
   background-color: rgba(255,255,255);
 }
 #hang {
-  border: 1px solid red;
   height: 70%;
   width: 400px;
   margin: 20px;
@@ -106,7 +104,6 @@ body {
   transform: rotate(50deg);
 }
 #targetWord {
-  border: 1px solid red;
   height: 90%;
   width: 700px;
   margin: 20px;
@@ -130,6 +127,7 @@ body {
   background-color: #306c7a;
   color: white;
   font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5em;
 }
 #newEntry {
   position: relative;
@@ -150,7 +148,6 @@ body {
   justify-content: center;
   height: 200px;
   width: 555px;
-  border: 1px solid red;
   letter-spacing: 20px;
   font-size: 2em;
 }
