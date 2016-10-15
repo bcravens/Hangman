@@ -39,10 +39,13 @@ function hideBody(){
           $("#inputGoesHere").html(hangman.wordUnderscore);
         }
       }
+    } else if (counter === 4) {
+        $(bodyParts[5]).css('border','2px solid black');
+        setTimeout(function() { alert("You lose."); }, 150);
     } else {
-        counter += 1;
-        $(bodyParts[counter]).css('border','2px solid black');
-      }
+      counter += 1;
+      $(bodyParts[counter]).css('border','2px solid black');
+    }
   });
 
 });
