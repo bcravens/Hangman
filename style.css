@@ -154,6 +154,33 @@ body {
   position:relative;
   top: -375px;
   left: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 90px;
+  width: 85.55px;
+  border-radius: 90px;
+  margin: 1px;
+  background-color: #306c7a;
+  color: white;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.2em;
+  text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+#reset:hover {
+  background: #2b6775;
+  border: solid 1px #2A4E77;
+}
+#reset:active {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  background: #255966;
+  border: solid 1px #203E5F;
+}
+#reset:focus {
+  outline:0;
+
 }
 #targetWord {
   display: flex;
