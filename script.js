@@ -3,35 +3,24 @@ var hangman = {
   inputWord: [],
   wordUnderscore: [],
   val: [],
+  counter: -1,
+  bodyParts: ["#head", "#body", "#leftArm", "#rightArm", "#leftLeg", "#rightLeg"]
 };
-
-var counter = -1;
-var bodyParts = ["#head", "#body", "#leftArm", "#rightArm", "#leftLeg", "#rightLeg"];
-
-function hideBody(){
-  for (i=0; i<bodyParts.length; i++)
-    $(bodyParts[i]).css('border','none');}
+  function hideBody(){
+    for (i=0; i<hangman.bodyParts.length; i++)
+      $(hangman.bodyParts[i]).css('border','none');}
 
   $("#entry").on("submit", function(pd){
     pd.preventDefault();
-    var userInput = $("#newEntry").val().toLowerCase();
-    var changeInput = userInput.split('');
-    hangman.inputWord = changeInput.concat();
-      for ( i=0; i<changeInput.length; i++) {
-        hangman.wordUnderscore[i] = "_";
-      }
+    hangman.inputWord = $("#newEntry").val().toLowerCase().split('');
+    for ( i=0; i<hangman.inputWord.length; i++) {
+      hangman.wordUnderscore[i] = "_";}
     $("#inputGoesHere").html(hangman.wordUnderscore);
     $("#entry").trigger("reset");
-    hideBody();
-  });
-
-  $(".letter").on("click", function(pd){
-    pd.preventDefault();
-    var grabValue = this.value;
-    hangman.val = grabValue;
-  });
+    hideBody();});
 
   $(".letter").on("click", function(){
+    hangman.val = this.value;
     if (hangman.inputWord.includes(hangman.val)) {
       for (i=0; i<hangman.inputWord.length; i++) {
         if (hangman.inputWord[i] === (hangman.val)){
@@ -39,13 +28,11 @@ function hideBody(){
           $("#inputGoesHere").html(hangman.wordUnderscore);
         }
       }
-    } else if (counter === 4) {
-        $(bodyParts[5]).css('border','2px solid black');
+    } else if (hangman.counter === 4) {
+        $(hangman.bodyParts[5]).css('border','2px solid black');
         setTimeout(function() { alert("You lose."); }, 150);
     } else {
-      counter += 1;
-      $(bodyParts[counter]).css('border','2px solid black');
-    }
+      hangman.counter += 1;
+      $(hangman.bodyParts[hangman.counter]).css('border','2px solid black');}
   });
-
 });

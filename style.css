@@ -132,7 +132,7 @@ body {
 #newEntry {
   position: relative;
   top: 370px;
-  left: -130px;
+  left: -235px;
   height: 50px;
   width: 300px;
   font-size: 2em;
@@ -142,6 +142,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: -100px;
 }
 #inputGoesHere {
   display: flex;
