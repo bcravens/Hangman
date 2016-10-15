@@ -131,7 +131,8 @@ body {
 }
 #newEntry {
   position: relative;
-  top: -240px;
+  top: 370px;
+  left: -130px;
   height: 50px;
   width: 300px;
   font-size: 2em;
@@ -150,4 +151,5 @@ body {
   width: 555px;
   letter-spacing: 20px;
   font-size: 2em;
+  border: 2px solid black;
 }

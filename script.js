@@ -5,6 +5,13 @@ var hangman = {
   val: [],
 };
 
+var counter = -1;
+var bodyParts = ["#head", "#body", "#leftArm", "#rightArm", "#leftLeg", "#rightLeg"];
+
+function hideBody(){
+  for (i=0; i<bodyParts.length; i++)
+    $(bodyParts[i]).css('border','none');}
+
   $("#entry").on("submit", function(pd){
     pd.preventDefault();
     var userInput = $("#newEntry").val().toLowerCase();
@@ -14,14 +21,14 @@ var hangman = {
         hangman.wordUnderscore[i] = "_";
       }
     $("#inputGoesHere").html(hangman.wordUnderscore);
-    $("this").trigger("reset");
+    $("#entry").trigger("reset");
+    hideBody();
   });
 
   $(".letter").on("click", function(pd){
     pd.preventDefault();
     var grabValue = this.value;
     hangman.val = grabValue;
-    console.log(hangman.val);
   });
 
   $(".letter").on("click", function(){
@@ -29,11 +36,13 @@ var hangman = {
       for (i=0; i<hangman.inputWord.length; i++) {
         if (hangman.inputWord[i] === (hangman.val)){
           hangman.wordUnderscore[i] = hangman.val;
+          $("#inputGoesHere").html(hangman.wordUnderscore);
         }
-        $("#inputGoesHere").html(hangman.wordUnderscore);
       }
-    }
+    } else {
+        counter += 1;
+        $(bodyParts[counter]).css('border','2px solid black');
+      }
   });
-
 
 });
