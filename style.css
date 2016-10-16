@@ -179,7 +179,6 @@ body {
 }
 #reset:focus {
   outline:0;
-
 }
 #targetWord {
   display: flex;
@@ -197,4 +196,18 @@ body {
   letter-spacing: 20px;
   font-size: 2em;
   border: 2px solid black;
+}
+#win {
+  position: relative;
+  top: -700px;
+  left: 860px;
+}
+#lose {
+  position: relative;
+  top: -700px;
+  left: 880px;
+}
+.result {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 4em;
 }
