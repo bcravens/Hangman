@@ -13,6 +13,7 @@ var hangman = {
 
   $("#entry").on("submit", function(pd){
     pd.preventDefault();
+    rst();
     hangman.inputWord = $("#newEntry").val().toLowerCase().split('');
     for ( i=0; i<hangman.inputWord.length; i++) {
       hangman.wordUnderscore[i] = "_";}
@@ -38,12 +39,12 @@ var hangman = {
       $(hangman.bodyParts[hangman.counter]).css('border','2px solid black');}
   });
 
-  $("#reset").on("click", function(){
+  function rst(){
     hangman.counter = -1;
     hangman.checkSubmit = 0;
     hangman.inputWord = [];
     hangman.wordUnderscore = [];
     $("#inputGoesHere").html(null);
-    for (i=0; i<hangman.bodyParts.length; i++)
-      $(hangman.bodyParts[i]).css('border','2px solid black');});
+    for (i=0; i<hangman.bodyParts.length; i++) {
+      $(hangman.bodyParts[i]).css('border','2px solid black');}}
 });
