@@ -70,7 +70,7 @@ var hangman = {
     function countdown(minutes) {
       var seconds = 60;
       function tick() {
-        var current_minutes = minutes-1
+        var current_minutes = minutes-1;
         seconds--;
         $("#counter").html(current_minutes.toString()+ ":" + (seconds < 10 ? "0" : "") + String(seconds));
         if (seconds > 0) {
