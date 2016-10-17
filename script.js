@@ -34,12 +34,13 @@ var hangman = {
           checksForWin();
         }
       }
-    } else if ($("#guessedLetters").html().includes(hangman.val)) {
+    } else if ($("#guessedLetters").html().includes(hangman.val) && hangman.checkSubmit !== 0) {
       alert("You already guessed that letter.");
     } else if (hangman.counter === 4) {
         $(hangman.bodyParts[5]).css('border','2px solid black');
         $("#lose").show();
         hangman.win += -1;
+        $("#inputGoesHere").html(hangman.inputWord);
     } else if (hangman.checkSubmit !== 0) {
       hangman.counter += 1;
       $(hangman.bodyParts[hangman.counter]).css('border','2px solid black');
