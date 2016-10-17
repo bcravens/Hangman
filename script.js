@@ -11,6 +11,7 @@ var hangman = {
 
   $("#entry").on("submit", function(pd){
     pd.preventDefault();
+    countdown(2);
     resets();
     hangman.inputWord = $("#newEntry").val().toLowerCase().split('');
     for ( i=0; i<hangman.inputWord.length; i++) {
@@ -65,4 +66,21 @@ var hangman = {
     $("#inputGoesHere").html(null);
     for (i=0; i<hangman.bodyParts.length; i++) {
       $(hangman.bodyParts[i]).css('border','2px solid black');}}
+
+    function countdown(minutes) {
+      var seconds = 60;
+      function tick() {
+        var current_minutes = minutes-1
+        seconds--;
+        $("#counter").html(current_minutes.toString()+ ":" + (seconds < 10 ? "0" : "") + String(seconds));
+        if (seconds > 0) {
+          setTimeout(tick,1000);
+        } else {
+          if(minutes > 1) {
+            countdown(minutes-1);
+          }
+        }
+      }
+      tick();
+    }
 });

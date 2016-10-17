@@ -18,7 +18,7 @@ body {
   margin: 20px;
 }
 #bottom {
-  border: 4px solid #422c1d;
+  border: 4px solid black;
   height: 0px;
   width: 80px;
   position: relative;
@@ -27,7 +27,7 @@ body {
   border-radius: 150px;
 }
 #top {
-  border: 4px solid #422c1d;
+  border: 4px solid black;
   height:0px;
   width: 100px;
   position: relative;
@@ -35,7 +35,7 @@ body {
   left: 55px;
 }
 #down {
-  border: 4px solid #422c1d;
+  border: 4px solid black;
   height: 30px;
   width: 0px;
   position: relative;
@@ -44,7 +44,7 @@ body {
 }
 #post {
   height: 225px;
-  border: 4px solid #422c1d;
+  border: 4px solid black;
   width: 0px;
   position: relative;
   left: 50px;
@@ -207,7 +207,7 @@ body {
   width: 555px;
   letter-spacing: 20px;
   font-size: 2em;
-  border: 2px solid black;
+  border: 5px inset white;
 }
 #win {
   position: relative;
@@ -228,17 +228,35 @@ body {
   justify-content: center;
   align-items: center;
   position: fixed;
-  left: 865px;
+  left: 870px;
   top: 375px;
   height: 100px;
   width: 300px;
-  border: 2px solid black;
+  border: 5px inset white;
   letter-spacing: 10px;
+  font-size: 2.5em;
 }
 #title {
   position: fixed;
   font-size: 5em;
-  top: 5px;
-  left: 785px;
+  top: -5px;
+  left: 780px;
   font-family: 'Poiret One', cursive;
+  letter-spacing: 15px;
+}
+img {
+  position: fixed;
+  top: 0px;
+  left: 1275px;
+}
+#counter {
+  height: 100px;
+  width: 100px;
+  border: 5px inset white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 738px;
+  top: 375px;
 }
