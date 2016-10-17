@@ -15,6 +15,9 @@ body {
   height: 70%;
   width: 400px;
   margin: 20px;
+  position: fixed;
+  left: 325px;
+  top: 100px;
 }
 #bottom {
   border: 4px solid black;
@@ -113,7 +116,7 @@ body {
   margin: 0 auto;
   height: 250px;
   position: relative;
-  top: -20px;
+  top: -10px;
 }
 .letter {
   display: flex;
@@ -144,12 +147,14 @@ body {
 #newEntry:focus {outline:0;}
 #newEntry {
   position: fixed;
-  top: 400px;
-  left: 275px;
+  top: 420px;
+  left: 325px;
   height: 50px;
   width: 300px;
   font-size: 2em;
   border: 1px solid black;
+  background-color: rgba(255,255,255,.5);
+  border: 5px inset white;
 }
 #entry {
   position: relative;
