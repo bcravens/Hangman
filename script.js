@@ -99,4 +99,5 @@ var hangman = {
       }
       tick();
     }
+    
 });
