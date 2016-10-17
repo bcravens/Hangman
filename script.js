@@ -5,7 +5,9 @@ var hangman = {
   val: [],
   counter: -1,
   bodyParts: ["#head", "#body", "#leftArm", "#rightArm", "#leftLeg", "#rightLeg"],
-  checkSubmit: 0
+  checkSubmit: 0,
+  win: 0,
+  points: 0
 };
   hideResult();
 
@@ -28,6 +30,7 @@ var hangman = {
         if (hangman.inputWord[i] === (hangman.val)){
           hangman.wordUnderscore[i] = hangman.val;
           $("#inputGoesHere").html(hangman.wordUnderscore);
+          $("#points").html(hangman.points += 10);
           checksForWin();
         }
       }
@@ -36,6 +39,7 @@ var hangman = {
     } else if (hangman.counter === 4) {
         $(hangman.bodyParts[5]).css('border','2px solid black');
         $("#lose").show();
+        hangman.win += -1;
     } else if (hangman.checkSubmit !== 0) {
       hangman.counter += 1;
       $(hangman.bodyParts[hangman.counter]).css('border','2px solid black');
@@ -54,11 +58,14 @@ var hangman = {
   function checksForWin() {
     if (hangman.wordUnderscore.includes("_")) {
     } else {
-      $("#win").show();}}
+      $("#win").show();
+      hangman.win +=1;}}
 
   function resets(){
     hideResult();
     $("#guessedLetters").html(null);
+    hangman.win = 0;
+    countdown(2);
     hangman.counter = -1;
     hangman.checkSubmit = 0;
     hangman.inputWord = [];
@@ -73,6 +80,11 @@ var hangman = {
         var current_minutes = minutes-1;
         seconds--;
         $("#counter").html(current_minutes.toString()+ ":" + (seconds < 10 ? "0" : "") + String(seconds));
+        if (hangman.win == 1 || hangman.win == -1) {
+          return;
+        } else if ($("#counter").text() === "0:00"){
+            $("#lose").show();
+        }
         if (seconds > 0) {
           setTimeout(tick,1000);
         } else {

@@ -228,7 +228,7 @@ body {
   justify-content: center;
   align-items: center;
   position: fixed;
-  left: 870px;
+  left: 865px;
   top: 375px;
   height: 100px;
   width: 300px;
@@ -257,6 +257,17 @@ img {
   align-items: center;
   justify-content: center;
   position: fixed;
-  left: 738px;
+  left: 736px;
+  top: 375px;
+}
+#points {
+  height: 100px;
+  width: 100px;
+  border: 5px inset white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 1193px;
   top: 375px;
 }
