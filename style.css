@@ -6,7 +6,6 @@ body {
   font-family: 'Cinzel', serif;
 }
 #gameboard {
-  display:flex;
   height: 425px;
   max-width: 70%;
   margin: 3em auto;
@@ -107,11 +106,6 @@ body {
   transform: rotate(50deg);
   border-radius: 150px;
 }
-#targetWord {
-  height: 90%;
-  width: 700px;
-  margin: 20px;
-}
 #alphabet {
   display: flex;
   flex-wrap: wrap;
@@ -149,9 +143,9 @@ body {
 .letter:focus {outline:0;}
 #newEntry:focus {outline:0;}
 #newEntry {
-  position: relative;
-  top: 370px;
-  left: -235px;
+  position: fixed;
+  top: 400px;
+  left: 275px;
   height: 50px;
   width: 300px;
   font-size: 2em;
@@ -196,8 +190,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  left: -100px;
+  height: 90%;
+  width: 700px;
+  margin: 20px;
+  position: fixed;
+  left: 650px;
+  top: -160px;
 }
 #inputGoesHere {
   display: flex;

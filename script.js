@@ -13,7 +13,7 @@ var hangman = {
 
   $("#entry").on("submit", function(pd){
     pd.preventDefault();
-    countdown(2);
+    countdown(1);
     resets();
     hangman.inputWord = $("#newEntry").val().toLowerCase().split('');
     for ( i=0; i<hangman.inputWord.length; i++) {
@@ -65,7 +65,9 @@ var hangman = {
     hideResult();
     $("#guessedLetters").html(null);
     hangman.win = 0;
-    countdown(2);
+    countdown(1);
+    $("#points").html("points");
+    hangman.points = 0;
     hangman.counter = -1;
     hangman.checkSubmit = 0;
     hangman.inputWord = [];
@@ -75,9 +77,10 @@ var hangman = {
       $(hangman.bodyParts[i]).css('border','2px solid black');}}
 
     function countdown(minutes) {
+      var mins = minutes;
       var seconds = 60;
       function tick() {
-        var current_minutes = minutes-1;
+        var current_minutes = mins-1;
         seconds--;
         $("#counter").html(current_minutes.toString()+ ":" + (seconds < 10 ? "0" : "") + String(seconds));
         if (hangman.win == 1 || hangman.win == -1) {
@@ -89,7 +92,7 @@ var hangman = {
           setTimeout(tick,1000);
         } else {
           if(minutes > 1) {
-            countdown(minutes-1);
+            countdown(mins-1);
           }
         }
       }
