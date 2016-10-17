@@ -8,7 +8,7 @@ var hangman = {
   checkSubmit: 0
 };
   hideResult();
-  
+
   $("#entry").on("submit", function(pd){
     pd.preventDefault();
     resets();
@@ -30,12 +30,16 @@ var hangman = {
           checksForWin();
         }
       }
+    } else if ($("#guessedLetters").html().includes(hangman.val)) {
+      alert("You already guessed that letter.");
     } else if (hangman.counter === 4) {
         $(hangman.bodyParts[5]).css('border','2px solid black');
         $("#lose").show();
-    } else if (hangman.checkSubmit !== 0){
+    } else if (hangman.checkSubmit !== 0) {
       hangman.counter += 1;
-      $(hangman.bodyParts[hangman.counter]).css('border','2px solid black');}
+      $(hangman.bodyParts[hangman.counter]).css('border','2px solid black');
+      $("#guessedLetters").append(hangman.val);
+    }
   });
 
   function hideResult() {
@@ -53,6 +57,7 @@ var hangman = {
 
   function resets(){
     hideResult();
+    $("#guessedLetters").html(null);
     hangman.counter = -1;
     hangman.checkSubmit = 0;
     hangman.inputWord = [];
