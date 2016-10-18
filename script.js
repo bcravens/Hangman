@@ -7,20 +7,25 @@ var hangman = {
   bodyParts: ["#head", "#body", "#leftArm", "#rightArm", "#leftLeg", "#rightLeg"],
   checkSubmit: 0,
   win: 0,
-  points: 0
+  points: 0,
+  reset: 0
 };
   hideResult();
 
   $("#entry").on("submit", function(pd){
     pd.preventDefault();
-    countdown(1);
+    if (hangman.reset === 1) {
+      alert("You must finish your current game first!");
+      return;
+    }
+    hangman.reset += 1;
     resets();
+    hangman.checkSubmit += 1;
     hangman.inputWord = $("#newEntry").val().toLowerCase().split('');
     for ( i=0; i<hangman.inputWord.length; i++) {
       hangman.wordUnderscore[i] = "_";}
     $("#inputGoesHere").html(hangman.wordUnderscore);
     $("#entry").trigger("reset");
-    hangman.checkSubmit += 1;
     hideBody();});
 
   $(".letter").on("click", function(){
@@ -40,6 +45,7 @@ var hangman = {
         $(hangman.bodyParts[5]).css('border','2px solid black');
         $("#lose").show();
         hangman.win += -1;
+        hangman.reset = 0;
         $("#inputGoesHere").html(hangman.inputWord);
     } else if (hangman.checkSubmit !== 0) {
       hangman.counter += 1;
@@ -60,7 +66,8 @@ var hangman = {
     if (hangman.wordUnderscore.includes("_")) {
     } else {
       $("#win").show();
-      hangman.win +=1;}}
+      hangman.win +=1;
+      hangman.reset = 0;}}
 
   function resets(){
     hideResult();
@@ -99,5 +106,5 @@ var hangman = {
       }
       tick();
     }
-    
+
 });
