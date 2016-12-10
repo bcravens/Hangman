@@ -13,64 +13,64 @@
   <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 </head>
 <body>
-<div id="gameboard">
-  <div id="hang">
-    <div id="top"></div>
-    <div id="down"></div>
-    <div id="bottom"></div>
-    <div id="post"></div>
-    <div id="person">
-      <div id="head"></div>
-      <div id="body"></div>
-      <div id="leftArm"></div>
-      <div id="rightArm"></div>
-      <div id="leftLeg"></div>
-      <div id="rightLeg"></div>
+  <div id="title">H_NGM_N!</div>
+  <img src="hangman.png" alt="">
+  <div id="guessedLetters">letters</div>
+  <div id="counter">1:00</div>
+  <div id="points">points</div>
+  <div id="gameboard">
+    <div id="hang">
+      <div id="top"></div>
+      <div id="down"></div>
+      <div id="bottom"></div>
+      <div id="post"></div>
+      <div id="person">
+        <div id="head"></div>
+        <div id="body"></div>
+        <div id="leftArm"></div>
+        <div id="rightArm"></div>
+        <div id="leftLeg"></div>
+        <div id="rightLeg"></div>
+      </div>
+    </div>
+    <form id="entry">
+      <input autocomplete="off" id="newEntry" autofocus placeholder="Enter Word Here">
+    </form>
+    <div id="targetWord">
+      <div id="inputGoesHere">
+        Word
+      </div>
     </div>
   </div>
-  <form id="entry">
-    <input autocomplete="off" id="newEntry" autofocus placeholder="Enter Word Here">
-  </form>
-  <div id="targetWord">
-    <div id="inputGoesHere">
-      Word
-    </div>
+  <div id="alphabet">
+    <button value="a" class="letter">A</button>
+    <button value="b" class="letter">B</button>
+    <button value="c" class="letter">C</button>
+    <button value="d" class="letter">D</button>
+    <button value="e" class="letter">E</button>
+    <button value="f" class="letter">F</button>
+    <button value="g" class="letter">G</button>
+    <button value="h" class="letter">H</button>
+    <button value="i" class="letter">I</button>
+    <button value="j" class="letter">J</button>
+    <button value="k" class="letter">K</button>
+    <button value="l" class="letter">L</button>
+    <button value="m" class="letter">M</button>
+    <button value="n" class="letter">N</button>
+    <button value="o" class="letter">O</button>
+    <button value="p" class="letter">P</button>
+    <button value="q" class="letter">Q</button>
+    <button value="r" class="letter">R</button>
+    <button value="s" class="letter">S</button>
+    <button value="t" class="letter">T</button>
+    <button value="u" class="letter">U</button>
+    <button value="v" class="letter">V</button>
+    <button value="w" class="letter">W</button>
+    <button value="x" class="letter">X</button>
+    <button value="y" class="letter">Y</button>
+    <button value="z" class="letter">Z</button>
   </div>
-</div>
-<div id="alphabet">
-  <button value="a" class="letter">A</button>
-  <button value="b" class="letter">B</button>
-  <button value="c" class="letter">C</button>
-  <button value="d" class="letter">D</button>
-  <button value="e" class="letter">E</button>
-  <button value="f" class="letter">F</button>
-  <button value="g" class="letter">G</button>
-  <button value="h" class="letter">H</button>
-  <button value="i" class="letter">I</button>
-  <button value="j" class="letter">J</button>
-  <button value="k" class="letter">K</button>
-  <button value="l" class="letter">L</button>
-  <button value="m" class="letter">M</button>
-  <button value="n" class="letter">N</button>
-  <button value="o" class="letter">O</button>
-  <button value="p" class="letter">P</button>
-  <button value="q" class="letter">Q</button>
-  <button value="r" class="letter">R</button>
-  <button value="s" class="letter">S</button>
-  <button value="t" class="letter">T</button>
-  <button value="u" class="letter">U</button>
-  <button value="v" class="letter">V</button>
-  <button value="w" class="letter">W</button>
-  <button value="x" class="letter">X</button>
-  <button value="y" class="letter">Y</button>
-  <button value="z" class="letter">Z</button>
-</div>
-<div class="result" id="win">YOU WINNN!!!</div>
-<div class="result" id="lose">YOU LOSE!!!</div>
-<div id="guessedLetters">letters</div>
-<div id="title">H_NGM_N!</div>
-<img src="hangman.png" alt="">
-<div id="counter">1:00</div>
-<div id="points">points</div>
+  <div class="result" id="win">YOU WINNN!!!</div>
+  <div class="result" id="lose">YOU LOSE!!!</div>
 </body>
 </html>
